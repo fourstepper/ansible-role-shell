@@ -1,6 +1,8 @@
 ansible-role-shell
 =========
 
+[![builds.sr.ht status](https://builds.sr.ht/~fourstepper/ansible-role-shell.svg)](https://builds.sr.ht/~fourstepper/ansible-role-shell?)
+
 This role installs and configures a ZSH with p10k setup on a given machine
 
 Requirements
