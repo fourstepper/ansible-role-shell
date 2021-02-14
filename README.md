@@ -1,4 +1,4 @@
-ansible-role-terminal
+ansible-role-shell
 =========
 
 This role installs and configures a ZSH with p10k setup on a given machine

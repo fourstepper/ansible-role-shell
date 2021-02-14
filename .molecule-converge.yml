@@ -15,4 +15,4 @@
       failed_when: systemctl_status.rc > 1
 
     - include_role:
-        name: "ansible-role-terminal"
+        name: "ansible-role-shell"
