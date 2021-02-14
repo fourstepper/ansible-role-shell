@@ -1,0 +1,6 @@
+---
+# defaults file for role-terminal
+terminal_packages:
+  - git
+  - zsh
+  - curl
