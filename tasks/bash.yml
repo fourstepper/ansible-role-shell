@@ -1,0 +1,31 @@
+---
+- name: Install a list of packages
+  package:
+    name: "{{ bash_packages }}"
+    state: present
+  become: true
+
+- name: Copy bash configuration
+  copy:
+    src: "../../../config_files/bash/bashrc"
+    dest: "$HOME/.bashrc"
+  ignore_errors: true
+  register: global_config
+
+- name: Copy ZSH configuration (if global config fails)
+  copy:
+    src: templates/bash/bashrc
+    dest: "$HOME/.bashrc"
+  when: global_config.failed
+
+- name: Change default shell to bash
+  command:
+    cmd: 'usermod --shell /bin/bash "{{ whoami.stdout }}"'
+  changed_when: false
+  become: true
+
+- name: Reload the bash configuration
+  shell: "source $HOME/.bashrc"
+  args:
+    executable: "/bin/bash"
+  changed_when: false

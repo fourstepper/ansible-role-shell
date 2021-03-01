@@ -1,6 +1,13 @@
 ---
 # defaults file for role-terminal
-terminal_packages:
+
+# can also use install_zsh: true for installing ZSH
+install_bash: true
+
+zsh_packages:
   - git
   - zsh
   - curl
+
+bash_packages:
+  - bash
